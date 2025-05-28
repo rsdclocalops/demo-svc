@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: my-cronjob
+spec:
+  schedule: "*/1 * * * *"  # every 1 minutes
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: sample-cron
+            image: sample-service:latest
+            imagePullPolicy: IfNotPresent
+            command: ["node"]
+            args: ["cron.js"]
+          restartPolicy: OnFailure
