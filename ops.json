@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "s3": [
+    "s3": {"buckets":[
       {
         "id": "attachments",
         "prefix": "attachments",
@@ -11,6 +11,6 @@
         "skip_preview": false,
         "preview_only": false
       }
-    ]
+    ]}
   }
 }
